@@ -24,7 +24,13 @@ dependencies {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
+bootRun.environment([
+		"PAGE_CONTENT": "YellowPages",
+])
 
+test.environment([
+		"PAGE_CONTENT": "YellowPages",
+])
 test {
 	useJUnitPlatform()
 }
