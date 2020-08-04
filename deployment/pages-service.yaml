@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: pages
+    servicefor: pages
+  name: pages
+  namespace: jagan
+spec:
+  ports:
+  - port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: pages
+    servicefor: pages
+  type: LoadBalancer
+status:
+  loadBalancer: {}

@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: pages
+    servicefor: pages
+  name: pages
+  namespace: jagan
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pages
+      servicefor: pages
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: pages
+        servicefor: pages
+    spec:
+      containers:
+      - image: shalmali1985/pages:init
+        imagePullPolicy: Always
+        name: pages
+        ports:
+          - containerPort: 8080
+        resources: {}
+status: {}
